@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Assign5_rsofiov</string>
+    <string name="nameP">Place Name Name</string>
+    <string name="category">ctegory</string>
+    <string name="discription">discription</string>
+    <string name="addressStreet">Address Street</string>
+    <string name="addressTitle">Student Name</string>
+    <string name="lon">lon</string>
+    <string name="lat">lat</string>
+    <string name="ele">ele</string>
+    <string name="defaulturl">http://10.0.2.2:8080</string>
+
+</resources>
