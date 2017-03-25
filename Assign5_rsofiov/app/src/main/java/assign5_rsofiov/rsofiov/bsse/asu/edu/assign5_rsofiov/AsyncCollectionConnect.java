@@ -13,7 +13,10 @@ import java.util.ArrayList;
  * Created by emilybyrne on 3/21/17.
  */
 
+
 public class AsyncCollectionConnect extends AsyncTask<MethodInformation, Integer, MethodInformation> {
+
+    public String url = "http://10.0.2.2:8081/";
     @Override
     protected void onPreExecute(){
         android.util.Log.d(this.getClass().getSimpleName(),"in onPreExecute on "+
@@ -82,6 +85,15 @@ public class AsyncCollectionConnect extends AsyncTask<MethodInformation, Integer
                 res.parent.lon.setText((new Double(aStud.lon)).toString());
                 res.parent.lat.setText((new Double(aStud.lat)).toString());
                 res.parent.ele.setText((new Double(aStud.ele)).toString());
+            }else if(res.method.equals("add")){
+                try {
+                    MethodInformation mi = new MethodInformation(res.parent, res.urlString, "getNames",
+                            new String[]{});
+                    AsyncCollectionConnect ac = (AsyncCollectionConnect) new AsyncCollectionConnect().execute(mi);
+                } catch (Exception ex) {
+                    android.util.Log.w(this.getClass().getSimpleName(), "Exception creating adapter: " +
+                            ex.getMessage());
+                }
             }
         }catch (Exception ex){
             android.util.Log.d(this.getClass().getSimpleName(),"Exception: "+ex.getMessage());
